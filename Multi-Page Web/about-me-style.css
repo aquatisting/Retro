@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Geo:ital@0;1&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Geo:ital@0;1&family=Roboto+Slab:wght@400;700&display=swap');
+
+:root {
+    --body-bg: #e8e2d1;
+    --text-primary: #333;
+    --text-secondary: #555;
+    --accent-color: #e15c44;
+    --title-font: 'Arial Black', Gadget, sans-serif;
+    --body-font: 'Courier New', monospace, sans-serif;
+    --divider-color: #777;
+    --icon-bg: #e15c44;
+    --icon-color: #e8e2d1;
+    --back-button-color: var(--text-secondary);
+    --back-button-hover: var(--text-primary);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--body-bg);
+    color: var(--text-primary);
+    line-height: 1.72;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1150px;
+    margin: 50px auto;
+    padding: 50px 40px;
+    contain: content;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.back-button {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 18px;
+    text-decoration: none;
+    color: var(--back-button-color);
+    font-size: 1.05em;
+    border: 1.2px solid var(--back-button-color);
+    border-radius: 6px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.back-button:hover {
+    color: var(--back-button-hover);
+    border-color: var(--back-button-hover);
+}
+
+.title {
+    font-size: 3.4rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-family: var(--title-font);
+    text-transform: uppercase;
+    color: var(--text-primary);
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 18px auto 30px;
+    color: var(--divider-color);
+    font-size: 1.15rem;
+    letter-spacing: 0.45em;
+    font-family: 'Roboto Slab', serif;
+}
+
+.subtitle {
+    font-size: 1.15rem;
+    letter-spacing: 0.06em;
+    color: var(--text-secondary);
+    font-weight: normal;
+    font-style: italic;
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+    margin-top: 35px;
+    contain: layout;
+}
+
+.interest-card {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.icon-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 25px;
+    background-color: var(--icon-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.icon {
+    width: 55px;
+    height: 55px;
+    fill: var(--icon-color);
+}
+
+.interest-title {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.interest-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: normal;
+}
+
+.divider-small {
+    width: 45px;
+    height: 1.7px;
+    background-color: var(--divider-color);
+    margin: 15px auto;
+}
+
+.interest-description {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    text-align: left;
+    max-width: 340px;
+    color: var(--text-primary);
+}
+
+@media (max-width: 1024px) {
+    .interests-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    .container {
+        padding: 40px 30px;
+        margin: 40px auto;
+    }
+    .header {
+        margin-bottom: 55px;
+    }
+    .title {
+        font-size: 3.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .interests-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .container {
+        padding: 30px 20px;
+        margin: 35px auto;
+    }
+    .header {
+        margin-bottom: 45px;
+    }
+    .title {
+        font-size: 2.4rem;
+        letter-spacing: 0.08em;
+    }
+    .subtitle {
+        font-size: 1.05rem;
+    }
+    .divider {
+        margin: 15px auto 20px;
+        letter-spacing: 0.35em;
+    }
+    .back-button {
+        top: 0px;
+        left: 0px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 25px 15px;
+        margin: 25px auto;
+    }
+    .header {
+        margin-bottom: 35px;
+    }
+    .title {
+        font-size: 2rem;
+        letter-spacing: 0.05em;
+    }
+    .subtitle {
+        font-size: 0.95rem;
+    }
+    .divider {
+        margin: 12px auto 18px;
+        letter-spacing: 0.25em;
+    }
+    .interest-card {
+        padding: 15px;
+    }
+    .icon-container {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+    .icon {
+        width: 45px;
+        height: 45px;
+    }
+    .interest-title {
+        font-size: 1.3rem;
+    }
+    .interest-description {
+        font-size: 0.85rem;
+        max-width: 100%;
+    }
+    .back-button {
+        top: -2px;
+        left: -2px;
+        font-size: 0.95em;
+        padding: 7px 12px;
+    }
+}
+
+@media print {
+    body {
+        background-color: white;
+        color: black;
+        font-size: 0.9em;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+        padding: 20px 0;
+        margin: 0;
+    }
+    .header {
+        margin-bottom: 30px;
+    }
+    .divider {
+        margin: 10px 0 15px;
+    }
+    .interests-grid {
+        margin-top: 20px;
+    }
+    .interest-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    .icon-container {
+        box-shadow: none;
+        background-color: transparent;
+    }
+    .icon {
+        fill: black;
+    }
+    .back-button {
+        display: none;
+    }
+}
